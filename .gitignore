@@ -1,0 +1,28 @@
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Very large files (>100MB) - consider Git LFS
+*.large
+
+# Compressed archives of results
+*.zip
+*.tar.gz
+*.tar
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Notebook checkpoints
+.ipynb_checkpoints/
