@@ -1,0 +1,24 @@
+2025-08-20 23:18:43,665 [INFO] Starting training with args: {'model': 'cnn', 'difficulty': 'hard', 'seed': 1, 'F': 52, 'T': 128, 'num_classes': 8, 'epochs': 60, 'batch': 256, 'n_samples': 3000, 'early_metric': 'macro_f1', 'patience': 10, 'ckpt_dir': 'checkpoints/', 'logit_l2': 0.1, 'sc_corr_rho': 0.8, 'env_burst_rate': 0.2, 'gain_drift_std': 1.0, 'class_overlap': 0.98, 'temp_mode': 'logspace', 'temp_min': 0.2, 'temp_max': 5.0, 'temp_steps': 100, 'val_split': 0.5, 'fixed_temp': 1.0, 'label_noise_prob': 0.25, 'cache_dir': 'cache/synth_data_d5scarce', 'amp': True, 'save_ckpt': 'final', 'num_workers_override': 2, 'prefetch_factor': 2, 'val_every': 3, 'out_json': '../WiFi-CSI-Sensing-Results/results_gpu/d5_2\\paperA_cnn_hard_s1.json', 'log_dir': ''}
+2025-08-20 23:18:43,666 [INFO] Logs saved to: E:\WiFi-CSI-Project\WiFi-CSI-Sensing-Results\results_gpu\d5_2\logs\paperA_cnn_hard_s1.log
+2025-08-20 23:18:43,688 [INFO] Using device: cuda
+2025-08-20 23:18:43,716 [INFO] Dataset: Train=2100, Val=450, Test=450
+2025-08-20 23:18:43,716 [INFO] DataLoader: num_workers=2, pin_memory=True
+2025-08-20 23:18:43,838 [INFO] Model: cnn with 644216 params
+2025-08-20 23:18:49,584 [INFO] Epoch 3/60 - Val Loss: 0.7606
+2025-08-20 23:18:51,345 [INFO] Epoch 5/60 - Train Loss: 0.9550, Val Loss: nan, Val macro_f1: 0.7190, Avg Reg Loss: 0.445767
+2025-08-20 23:18:52,281 [INFO] Epoch 6/60 - Val Loss: 0.4986
+2025-08-20 23:18:55,043 [INFO] Epoch 9/60 - Val Loss: 0.3956
+2025-08-20 23:18:55,823 [INFO] Epoch 10/60 - Train Loss: 0.7181, Val Loss: nan, Val macro_f1: 0.9377, Avg Reg Loss: 0.434773
+2025-08-20 23:18:57,617 [INFO] Epoch 12/60 - Val Loss: 0.3355
+2025-08-20 23:18:59,594 [INFO] Epoch 15/60 - Val Loss: 0.3130
+2025-08-20 23:18:59,704 [INFO] Epoch 15/60 - Train Loss: 0.6092, Val Loss: 0.3130, Val macro_f1: 0.9488, Avg Reg Loss: 0.420867
+2025-08-20 23:19:02,366 [INFO] Epoch 18/60 - Val Loss: 0.2916
+2025-08-20 23:19:03,970 [INFO] Epoch 20/60 - Train Loss: 0.5606, Val Loss: nan, Val macro_f1: 0.9488, Avg Reg Loss: 0.414703
+2025-08-20 23:19:04,863 [INFO] Epoch 21/60 - Val Loss: 0.2938
+2025-08-20 23:19:07,582 [INFO] Epoch 24/60 - Val Loss: 0.2864
+2025-08-20 23:19:08,573 [INFO] Early stopping at epoch 25
+2025-08-20 23:19:08,671 [INFO] Collected test logits and targets
+2025-08-20 23:19:08,715 [INFO] Calibration: T=0.4364, Details={'temperature': 0.43643999099731445, 'best_nll': 0.09770923107862473, 'method': 'logspace'}
+2025-08-20 23:19:08,845 [INFO] Saved full results to ../WiFi-CSI-Sensing-Results/results_gpu/d5_2\paperA_cnn_hard_s1.json
+2025-08-20 23:19:08,854 [INFO] Final model saved to checkpoints/final_cnn_1_hard.pth
+2025-08-20 23:19:08,855 [INFO] Updated registry: results\registry.csv

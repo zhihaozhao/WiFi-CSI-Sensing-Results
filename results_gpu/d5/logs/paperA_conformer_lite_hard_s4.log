@@ -1,0 +1,29 @@
+2025-08-20 23:57:52,536 [INFO] Starting training with args: {'model': 'conformer_lite', 'difficulty': 'hard', 'seed': 4, 'F': 52, 'T': 128, 'num_classes': 8, 'epochs': 60, 'batch': 256, 'n_samples': 3000, 'early_metric': 'macro_f1', 'patience': 10, 'ckpt_dir': 'checkpoints/', 'logit_l2': 0.1, 'sc_corr_rho': 0.8, 'env_burst_rate': 0.2, 'gain_drift_std': 1.0, 'class_overlap': 0.98, 'temp_mode': 'logspace', 'temp_min': 0.2, 'temp_max': 5.0, 'temp_steps': 100, 'val_split': 0.5, 'fixed_temp': 1.0, 'label_noise_prob': 0.25, 'cache_dir': 'cache/synth_data_d5scarce', 'amp': True, 'save_ckpt': 'final', 'num_workers_override': 2, 'prefetch_factor': 2, 'val_every': 3, 'out_json': '../WiFi-CSI-Sensing-Results/results_gpu/d5_2\\paperA_conformer_lite_hard_s4.json', 'log_dir': ''}
+2025-08-20 23:57:52,537 [INFO] Logs saved to: E:\WiFi-CSI-Project\WiFi-CSI-Sensing-Results\results_gpu\d5_2\logs\paperA_conformer_lite_hard_s4.log
+2025-08-20 23:57:52,558 [INFO] Using device: cuda
+2025-08-20 23:57:52,592 [INFO] Dataset: Train=2100, Val=450, Test=450
+2025-08-20 23:57:52,592 [INFO] DataLoader: num_workers=2, pin_memory=True
+2025-08-20 23:57:52,824 [INFO] Model: conformer_lite with 1721008 params
+2025-08-20 23:58:04,086 [INFO] Epoch 3/60 - Val Loss: 2.4234
+2025-08-20 23:58:09,703 [INFO] Epoch 5/60 - Train Loss: 0.9357, Val Loss: nan, Val macro_f1: 0.1386, Avg Reg Loss: 0.491629
+2025-08-20 23:58:12,019 [INFO] Epoch 6/60 - Val Loss: 1.1407
+2025-08-20 23:58:18,846 [INFO] Epoch 9/60 - Val Loss: 0.2977
+2025-08-20 23:58:21,196 [INFO] Epoch 10/60 - Train Loss: 0.7223, Val Loss: nan, Val macro_f1: 0.9010, Avg Reg Loss: 0.429353
+2025-08-20 23:58:25,524 [INFO] Epoch 12/60 - Val Loss: 0.7281
+2025-08-20 23:58:31,952 [INFO] Epoch 15/60 - Val Loss: 0.2243
+2025-08-20 23:58:32,045 [INFO] Epoch 15/60 - Train Loss: 0.6093, Val Loss: 0.2243, Val macro_f1: 0.9296, Avg Reg Loss: 0.426542
+2025-08-20 23:58:38,631 [INFO] Epoch 18/60 - Val Loss: 0.3577
+2025-08-20 23:58:43,010 [INFO] Epoch 20/60 - Train Loss: 0.5618, Val Loss: nan, Val macro_f1: 0.9296, Avg Reg Loss: 0.418039
+2025-08-20 23:58:45,435 [INFO] Epoch 21/60 - Val Loss: 0.3014
+2025-08-20 23:58:53,632 [INFO] Epoch 24/60 - Val Loss: 0.1503
+2025-08-20 23:58:56,018 [INFO] Epoch 25/60 - Train Loss: 0.5455, Val Loss: nan, Val macro_f1: 0.9658, Avg Reg Loss: 0.409406
+2025-08-20 23:59:00,411 [INFO] Epoch 27/60 - Val Loss: 0.2218
+2025-08-20 23:59:07,299 [INFO] Epoch 30/60 - Val Loss: 0.1752
+2025-08-20 23:59:08,742 [INFO] Epoch 30/60 - Train Loss: 0.5148, Val Loss: 0.1752, Val macro_f1: 0.9636, Avg Reg Loss: 0.407362
+2025-08-20 23:59:14,130 [INFO] Epoch 33/60 - Val Loss: 0.9690
+2025-08-20 23:59:17,662 [INFO] Early stopping at epoch 34
+2025-08-20 23:59:17,963 [INFO] Collected test logits and targets
+2025-08-20 23:59:18,008 [INFO] Calibration: T=0.9839, Details={'temperature': 0.983874499797821, 'best_nll': 0.6122593283653259, 'method': 'logspace'}
+2025-08-20 23:59:18,542 [INFO] Saved full results to ../WiFi-CSI-Sensing-Results/results_gpu/d5_2\paperA_conformer_lite_hard_s4.json
+2025-08-20 23:59:19,692 [INFO] Final model saved to checkpoints/final_conformer_lite_4_hard.pth
+2025-08-20 23:59:19,695 [INFO] Updated registry: results\registry.csv

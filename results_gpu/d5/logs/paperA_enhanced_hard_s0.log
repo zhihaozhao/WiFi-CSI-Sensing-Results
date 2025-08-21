@@ -1,0 +1,37 @@
+2025-08-20 22:37:36,704 [INFO] Starting training with args: {'model': 'enhanced', 'difficulty': 'hard', 'seed': 0, 'F': 52, 'T': 128, 'num_classes': 8, 'epochs': 60, 'batch': 256, 'n_samples': 3000, 'early_metric': 'macro_f1', 'patience': 10, 'ckpt_dir': 'checkpoints/', 'logit_l2': 0.1, 'sc_corr_rho': 0.8, 'env_burst_rate': 0.2, 'gain_drift_std': 1.0, 'class_overlap': 0.98, 'temp_mode': 'logspace', 'temp_min': 0.2, 'temp_max': 5.0, 'temp_steps': 100, 'val_split': 0.5, 'fixed_temp': 1.0, 'label_noise_prob': 0.25, 'cache_dir': 'cache/synth_data_d5scarce', 'amp': True, 'save_ckpt': 'final', 'num_workers_override': 2, 'prefetch_factor': 2, 'val_every': 3, 'out_json': '../WiFi-CSI-Sensing-Results/results_gpu/d5_2\\paperA_enhanced_hard_s0.json', 'log_dir': ''}
+2025-08-20 22:37:36,704 [INFO] Logs saved to: E:\WiFi-CSI-Project\WiFi-CSI-Sensing-Results\results_gpu\d5_2\logs\paperA_enhanced_hard_s0.log
+2025-08-20 22:37:36,730 [INFO] Using device: cuda
+2025-08-20 22:38:01,143 [INFO] Dataset: Train=2100, Val=450, Test=450
+2025-08-20 22:38:01,144 [INFO] DataLoader: num_workers=2, pin_memory=True
+2025-08-20 22:38:01,422 [INFO] Model: enhanced with 640713 params
+2025-08-20 22:38:26,992 [INFO] Epoch 3/60 - Val Loss: 3.7918
+2025-08-20 22:38:31,086 [INFO] Epoch 5/60 - Train Loss: 0.7316, Val Loss: nan, Val macro_f1: 0.1361, Avg Reg Loss: 0.426470
+2025-08-20 22:38:33,241 [INFO] Epoch 6/60 - Val Loss: 0.4436
+2025-08-20 22:38:39,508 [INFO] Epoch 9/60 - Val Loss: 0.1619
+2025-08-20 22:38:41,667 [INFO] Epoch 10/60 - Train Loss: 0.6043, Val Loss: nan, Val macro_f1: 0.9811, Avg Reg Loss: 0.420795
+2025-08-20 22:38:45,775 [INFO] Epoch 12/60 - Val Loss: 0.1860
+2025-08-20 22:38:52,076 [INFO] Epoch 15/60 - Val Loss: 0.1509
+2025-08-20 22:38:52,303 [INFO] Epoch 15/60 - Train Loss: 0.5688, Val Loss: 0.1509, Val macro_f1: 0.9853, Avg Reg Loss: 0.424072
+2025-08-20 22:38:58,352 [INFO] Epoch 18/60 - Val Loss: 0.1540
+2025-08-20 22:39:02,528 [INFO] Epoch 20/60 - Train Loss: 0.5457, Val Loss: nan, Val macro_f1: 0.9853, Avg Reg Loss: 0.406722
+2025-08-20 22:39:04,682 [INFO] Epoch 21/60 - Val Loss: 0.1589
+2025-08-20 22:39:10,920 [INFO] Epoch 24/60 - Val Loss: 0.3154
+2025-08-20 22:39:13,091 [INFO] Epoch 25/60 - Train Loss: 0.5860, Val Loss: nan, Val macro_f1: 0.9892, Avg Reg Loss: 0.416921
+2025-08-20 22:39:17,181 [INFO] Epoch 27/60 - Val Loss: 0.1100
+2025-08-20 22:39:23,409 [INFO] Epoch 30/60 - Val Loss: 0.1411
+2025-08-20 22:39:23,637 [INFO] Epoch 30/60 - Train Loss: 0.5355, Val Loss: 0.1411, Val macro_f1: 0.9914, Avg Reg Loss: 0.405510
+2025-08-20 22:39:29,652 [INFO] Epoch 33/60 - Val Loss: 0.1245
+2025-08-20 22:39:33,737 [INFO] Epoch 35/60 - Train Loss: 0.5086, Val Loss: nan, Val macro_f1: 0.9940, Avg Reg Loss: 0.397874
+2025-08-20 22:39:35,906 [INFO] Epoch 36/60 - Val Loss: 0.1208
+2025-08-20 22:39:42,209 [INFO] Epoch 39/60 - Val Loss: 0.1132
+2025-08-20 22:39:44,381 [INFO] Epoch 40/60 - Train Loss: 0.5037, Val Loss: nan, Val macro_f1: 0.9981, Avg Reg Loss: 0.402326
+2025-08-20 22:39:48,452 [INFO] Epoch 42/60 - Val Loss: 0.1458
+2025-08-20 22:39:54,680 [INFO] Epoch 45/60 - Val Loss: 0.1409
+2025-08-20 22:39:54,902 [INFO] Epoch 45/60 - Train Loss: 0.5305, Val Loss: 0.1409, Val macro_f1: 0.9914, Avg Reg Loss: 0.402580
+2025-08-20 22:40:00,911 [INFO] Epoch 48/60 - Val Loss: 0.1286
+2025-08-20 22:40:03,068 [INFO] Early stopping at epoch 49
+2025-08-20 22:40:03,289 [INFO] Collected test logits and targets
+2025-08-20 22:40:03,354 [INFO] Calibration: T=0.5135, Details={'temperature': 0.51348477602005, 'best_nll': 0.0531989149749279, 'method': 'logspace'}
+2025-08-20 22:40:03,505 [INFO] Saved full results to ../WiFi-CSI-Sensing-Results/results_gpu/d5_2\paperA_enhanced_hard_s0.json
+2025-08-20 22:40:03,523 [INFO] Final model saved to checkpoints/final_enhanced_0_hard.pth
+2025-08-20 22:40:03,524 [INFO] Updated registry: results\registry.csv
