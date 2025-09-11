@@ -1,0 +1,111 @@
+{
+  "timestamp": "2025-09-07T13:11:21.469305",
+  "system_info": {
+    "platform": "Linux-4.9.140-tegra-aarch64-with-Ubuntu-18.04-bionic",
+    "processor": "aarch64",
+    "python_version": "3.6.9",
+    "pytorch_version": "1.8.0",
+    "device": "cuda",
+    "cuda_available": true,
+    "cuda_version": "10.2"
+  },
+  "experiment_config": {
+    "T": 128,
+    "F": 52,
+    "num_classes": 8,
+    "input_shape": [
+      1,
+      128,
+      52
+    ],
+    "description": "D1 all models measurement using real models from src/models.py",
+    "models_tested": [
+      "enhanced",
+      "cnn",
+      "bilstm",
+      "conformer_lite"
+    ]
+  },
+  "results": {
+    "enhanced": {
+      "model": "enhanced",
+      "parameters": 640713,
+      "parameters_K": 640.713,
+      "parameters_M": 0.640713,
+      "inference_mean_ms": 5.1496859500184655,
+      "inference_std_ms": 1.44994634413555,
+      "inference_min_ms": 4.478773000300862,
+      "inference_max_ms": 11.321259999022004,
+      "memory_peak_mb": 8.58447265625,
+      "flops_g": 0.8529171456,
+      "edge_ready": true,
+      "device": "cuda",
+      "input_shape": [
+        1,
+        128,
+        52
+      ],
+      "config_type": "D1_true_parameters"
+    },
+    "cnn": {
+      "model": "cnn",
+      "parameters": 644216,
+      "parameters_K": 644.216,
+      "parameters_M": 0.644216,
+      "inference_mean_ms": 0.8738938598798995,
+      "inference_std_ms": 0.13769753410593963,
+      "inference_min_ms": 0.776553999457974,
+      "inference_max_ms": 1.5761499998916406,
+      "memory_peak_mb": 5.76123046875,
+      "flops_g": 0.8575803392000001,
+      "edge_ready": true,
+      "device": "cuda",
+      "input_shape": [
+        1,
+        128,
+        52
+      ],
+      "config_type": "D1_true_parameters"
+    },
+    "bilstm": {
+      "model": "bilstm",
+      "parameters": 583688,
+      "parameters_K": 583.688,
+      "parameters_M": 0.583688,
+      "inference_mean_ms": 10.193506140076352,
+      "inference_std_ms": 0.5763846432235169,
+      "inference_min_ms": 9.819865999816102,
+      "inference_max_ms": 14.152422001643572,
+      "memory_peak_mb": 10.15234375,
+      "flops_g": 0.7770054656000001,
+      "edge_ready": true,
+      "device": "cuda",
+      "input_shape": [
+        1,
+        128,
+        52
+      ],
+      "config_type": "D1_true_parameters"
+    },
+    "conformer_lite": {
+      "model": "conformer_lite",
+      "parameters": 1448064,
+      "parameters_K": 1448.064,
+      "parameters_M": 1.448064,
+      "inference_mean_ms": 6.5723265199994785,
+      "inference_std_ms": 0.11565393484337387,
+      "inference_min_ms": 6.3928290001058485,
+      "inference_max_ms": 7.211018999441876,
+      "memory_peak_mb": 13.7333984375,
+      "flops_g": 1.9276627968000002,
+      "edge_ready": true,
+      "device": "cuda",
+      "input_shape": [
+        1,
+        128,
+        52
+      ],
+      "config_type": "D1_true_parameters"
+    }
+  }
+}
