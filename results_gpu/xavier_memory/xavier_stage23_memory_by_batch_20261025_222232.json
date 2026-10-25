@@ -1,0 +1,155 @@
+{
+  "timestamp": "2026-10-25T22:21:57.279124",
+  "purpose": "Stage 2 Maxwell-PINN and Stage 3 SoftRes-Mamba peak GPU memory by batch size",
+  "protocol": {
+    "warmup_runs": 30,
+    "measure_runs": 100,
+    "memory": "torch.cuda.max_memory_allocated after reset_peak_memory_stats, one model and one batch at a time",
+    "input": "[B, T, F] random normal, eval mode, no grad"
+  },
+  "system_info": {
+    "platform": "Linux-4.9.140-tegra-aarch64-with-Ubuntu-18.04-bionic",
+    "python_version": "3.6.9",
+    "pytorch_version": "1.8.0",
+    "cuda_version": "10.2",
+    "cuda_device_name": "Xavier"
+  },
+  "models": {
+    "maxwell_pinn": {
+      "stage": 2,
+      "T": 128,
+      "F": 52,
+      "num_classes": 8,
+      "note": "Stage 2 training net: EnhancedNet plus Linear(320, 2). Not the 204K board proxy.",
+      "parameters": 641355,
+      "parameters_match_expected": true,
+      "batch_results": [
+        {
+          "batch_size": 1,
+          "input_shape": [
+            1,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 4.51773161996698,
+          "avg_per_sample_time_ms": 4.51773161996698,
+          "throughput_samples_per_sec": 221.35002344546285,
+          "min_time_ms": 4.381065999950806,
+          "max_time_ms": 5.843672000082734,
+          "time_std_ms": 0.152867018128654,
+          "memory_peak_allocated_mb": 8.58740234375,
+          "memory_peak_reserved_mb": 22.0,
+          "memory_current_allocated_mb": 2.4921875
+        },
+        {
+          "batch_size": 4,
+          "input_shape": [
+            4,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 7.930205529987688,
+          "avg_per_sample_time_ms": 1.982551382496922,
+          "throughput_samples_per_sec": 504.40054609860914,
+          "min_time_ms": 7.6489980001497315,
+          "max_time_ms": 8.616289999736182,
+          "time_std_ms": 0.10805322761003701,
+          "memory_peak_allocated_mb": 26.9482421875,
+          "memory_peak_reserved_mb": 44.0,
+          "memory_current_allocated_mb": 2.568359375
+        },
+        {
+          "batch_size": 8,
+          "input_shape": [
+            8,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 13.350739240017901,
+          "avg_per_sample_time_ms": 1.6688424050022377,
+          "throughput_samples_per_sec": 599.2177553749656,
+          "min_time_ms": 13.088119000258303,
+          "max_time_ms": 13.518698999632761,
+          "time_std_ms": 0.0989611641349624,
+          "memory_peak_allocated_mb": 51.8203125,
+          "memory_peak_reserved_mb": 60.0,
+          "memory_current_allocated_mb": 2.669921875
+        }
+      ]
+    },
+    "softres_mamba": {
+      "stage": 3,
+      "T": 128,
+      "F": 90,
+      "num_classes": 6,
+      "note": "Soft residual head on a vanilla selective scan. d_model=164, layers=3, d_state=16.",
+      "parameters": 700325,
+      "parameters_match_expected": true,
+      "batch_results": [
+        {
+          "batch_size": 1,
+          "input_shape": [
+            1,
+            128,
+            90
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 65.52898785001616,
+          "avg_per_sample_time_ms": 65.52898785001616,
+          "throughput_samples_per_sec": 15.260421880600637,
+          "min_time_ms": 62.80366800001502,
+          "max_time_ms": 103.02907100003722,
+          "time_std_ms": 4.304013989980726,
+          "memory_peak_allocated_mb": 14.05078125,
+          "memory_peak_reserved_mb": 26.0,
+          "memory_current_allocated_mb": 2.73388671875
+        },
+        {
+          "batch_size": 4,
+          "input_shape": [
+            4,
+            128,
+            90
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 66.13341602000673,
+          "avg_per_sample_time_ms": 16.533354005001684,
+          "throughput_samples_per_sec": 60.48379534470013,
+          "min_time_ms": 64.70535399967048,
+          "max_time_ms": 73.55701000005865,
+          "time_std_ms": 1.070230216431112,
+          "memory_peak_allocated_mb": 48.5419921875,
+          "memory_peak_reserved_mb": 64.0,
+          "memory_current_allocated_mb": 2.86572265625
+        },
+        {
+          "batch_size": 8,
+          "input_shape": [
+            8,
+            128,
+            90
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 63.30210923998493,
+          "avg_per_sample_time_ms": 7.912763654998116,
+          "throughput_samples_per_sec": 126.37809539127933,
+          "min_time_ms": 62.41159199998947,
+          "max_time_ms": 64.4384759998502,
+          "time_std_ms": 0.43710114495678426,
+          "memory_peak_allocated_mb": 93.4365234375,
+          "memory_peak_reserved_mb": 118.0,
+          "memory_current_allocated_mb": 3.04150390625
+        }
+      ]
+    }
+  }
+}

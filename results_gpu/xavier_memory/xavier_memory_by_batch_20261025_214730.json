@@ -1,0 +1,288 @@
+{
+  "timestamp": "2026-10-25T21:47:06.453347",
+  "purpose": "C4-17 peak GPU memory at the batch sizes used on 5 Sep 2025",
+  "protocol": {
+    "matches": "paperA/scripts/exp_xavier/measure_all_models_xavier.py",
+    "warmup_runs": 30,
+    "measure_runs": 100,
+    "memory": "torch.cuda.max_memory_allocated after reset_peak_memory_stats, one model and one batch at a time",
+    "input": "[B, T, F] random normal, eval mode, no grad"
+  },
+  "system_info": {
+    "platform": "Linux-4.9.140-tegra-aarch64-with-Ubuntu-18.04-bionic",
+    "python_version": "3.6.9",
+    "pytorch_version": "1.8.0",
+    "cuda_version": "10.2",
+    "cuda_device_name": "Xavier"
+  },
+  "experiment_config": {
+    "T": 128,
+    "F": 52,
+    "num_classes": 8,
+    "batch_sizes": [
+      1,
+      4,
+      8
+    ]
+  },
+  "reference_batch1_mb": {
+    "enhanced": 8.58447265625,
+    "cnn": 5.76123046875,
+    "bilstm": 10.15234375,
+    "conformer_lite": 13.7333984375
+  },
+  "models": {
+    "enhanced": {
+      "parameters": 640713,
+      "parameters_match_20250907": true,
+      "batch_results": [
+        {
+          "batch_size": 1,
+          "input_shape": [
+            1,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 9.10255316000189,
+          "avg_per_sample_time_ms": 9.10255316000189,
+          "throughput_samples_per_sec": 109.85928699589077,
+          "min_time_ms": 8.548868999923798,
+          "max_time_ms": 10.78415999995741,
+          "time_std_ms": 0.303215044326654,
+          "memory_peak_allocated_mb": 8.58447265625,
+          "memory_peak_reserved_mb": 22.0,
+          "memory_current_allocated_mb": 2.4892578125
+        },
+        {
+          "batch_size": 4,
+          "input_shape": [
+            4,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 17.848923290000585,
+          "avg_per_sample_time_ms": 4.462230822500146,
+          "throughput_samples_per_sec": 224.1031537314579,
+          "min_time_ms": 7.532438999987789,
+          "max_time_ms": 29.325362999998106,
+          "time_std_ms": 10.302885823839636,
+          "memory_peak_allocated_mb": 26.9453125,
+          "memory_peak_reserved_mb": 44.0,
+          "memory_current_allocated_mb": 2.5654296875
+        },
+        {
+          "batch_size": 8,
+          "input_shape": [
+            8,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 13.438077859992745,
+          "avg_per_sample_time_ms": 1.6797597324990932,
+          "throughput_samples_per_sec": 595.3232362060685,
+          "min_time_ms": 13.190584999961175,
+          "max_time_ms": 13.684140000009393,
+          "time_std_ms": 0.10279821214354064,
+          "memory_peak_allocated_mb": 51.8173828125,
+          "memory_peak_reserved_mb": 60.0,
+          "memory_current_allocated_mb": 2.6669921875
+        }
+      ]
+    },
+    "cnn": {
+      "parameters": 644216,
+      "parameters_match_20250907": true,
+      "batch_results": [
+        {
+          "batch_size": 1,
+          "input_shape": [
+            1,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 0.9192332700069983,
+          "avg_per_sample_time_ms": 0.9192332700069983,
+          "throughput_samples_per_sec": 1087.8631492443553,
+          "min_time_ms": 0.8778229999961695,
+          "max_time_ms": 1.038748999917516,
+          "time_std_ms": 0.029248472804862924,
+          "memory_peak_allocated_mb": 3.29736328125,
+          "memory_peak_reserved_mb": 22.0,
+          "memory_current_allocated_mb": 2.48486328125
+        },
+        {
+          "batch_size": 4,
+          "input_shape": [
+            4,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 0.9151462699946933,
+          "avg_per_sample_time_ms": 0.22878656749867332,
+          "throughput_samples_per_sec": 4370.8859787225,
+          "min_time_ms": 0.8728650000193738,
+          "max_time_ms": 1.1716479999677176,
+          "time_std_ms": 0.042338618143953836,
+          "memory_peak_allocated_mb": 5.81103515625,
+          "memory_peak_reserved_mb": 24.0,
+          "memory_current_allocated_mb": 2.56103515625
+        },
+        {
+          "batch_size": 8,
+          "input_shape": [
+            8,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 1.1806775400111746,
+          "avg_per_sample_time_ms": 0.14758469250139683,
+          "throughput_samples_per_sec": 6775.770461360926,
+          "min_time_ms": 1.1040779999120787,
+          "max_time_ms": 1.2888699999393793,
+          "time_std_ms": 0.03784550373336072,
+          "memory_peak_allocated_mb": 9.16259765625,
+          "memory_peak_reserved_mb": 24.0,
+          "memory_current_allocated_mb": 2.66259765625
+        }
+      ]
+    },
+    "bilstm": {
+      "parameters": 583688,
+      "parameters_match_20250907": true,
+      "batch_results": [
+        {
+          "batch_size": 1,
+          "input_shape": [
+            1,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 11.517645829998173,
+          "avg_per_sample_time_ms": 11.517645829998173,
+          "throughput_samples_per_sec": 86.823298333715,
+          "min_time_ms": 9.084295000093334,
+          "max_time_ms": 18.95597300006102,
+          "time_std_ms": 3.2324834490794796,
+          "memory_peak_allocated_mb": 5.22900390625,
+          "memory_peak_reserved_mb": 22.0,
+          "memory_current_allocated_mb": 2.25244140625
+        },
+        {
+          "batch_size": 4,
+          "input_shape": [
+            4,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 9.69039928999564,
+          "avg_per_sample_time_ms": 2.42259982249891,
+          "throughput_samples_per_sec": 412.77968846233165,
+          "min_time_ms": 9.22467099996993,
+          "max_time_ms": 11.065881000035915,
+          "time_std_ms": 0.38574757223689005,
+          "memory_peak_allocated_mb": 7.20361328125,
+          "memory_peak_reserved_mb": 22.0,
+          "memory_current_allocated_mb": 2.32861328125
+        },
+        {
+          "batch_size": 8,
+          "input_shape": [
+            8,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 9.486574979999887,
+          "avg_per_sample_time_ms": 1.1858218724999858,
+          "throughput_samples_per_sec": 843.2969767135173,
+          "min_time_ms": 9.217800999977044,
+          "max_time_ms": 10.817157000019506,
+          "time_std_ms": 0.2605267410374711,
+          "memory_peak_allocated_mb": 9.97705078125,
+          "memory_peak_reserved_mb": 22.0,
+          "memory_current_allocated_mb": 2.43017578125
+        }
+      ]
+    },
+    "conformer_lite": {
+      "parameters": 1448064,
+      "parameters_match_20250907": true,
+      "batch_results": [
+        {
+          "batch_size": 1,
+          "input_shape": [
+            1,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 7.034696570004826,
+          "avg_per_sample_time_ms": 7.034696570004826,
+          "throughput_samples_per_sec": 142.15254205332613,
+          "min_time_ms": 6.759830000078182,
+          "max_time_ms": 7.922485999984019,
+          "time_std_ms": 0.18383741742560852,
+          "memory_peak_allocated_mb": 6.5830078125,
+          "memory_peak_reserved_mb": 8.0,
+          "memory_current_allocated_mb": 5.5673828125
+        },
+        {
+          "batch_size": 4,
+          "input_shape": [
+            4,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 6.392720800004099,
+          "avg_per_sample_time_ms": 1.5981802000010248,
+          "throughput_samples_per_sec": 625.7116688089108,
+          "min_time_ms": 6.105385999944701,
+          "max_time_ms": 7.238356000016211,
+          "time_std_ms": 0.16614323124655211,
+          "memory_peak_allocated_mb": 9.7060546875,
+          "memory_peak_reserved_mb": 30.0,
+          "memory_current_allocated_mb": 5.6435546875
+        },
+        {
+          "batch_size": 8,
+          "input_shape": [
+            8,
+            128,
+            52
+          ],
+          "warmup_runs": 30,
+          "measure_runs": 100,
+          "avg_total_time_ms": 6.950122360007072,
+          "avg_per_sample_time_ms": 0.868765295000884,
+          "throughput_samples_per_sec": 1151.05887142854,
+          "min_time_ms": 6.433365000020785,
+          "max_time_ms": 10.496581000097649,
+          "time_std_ms": 0.6190221149528162,
+          "memory_peak_allocated_mb": 13.8701171875,
+          "memory_peak_reserved_mb": 34.0,
+          "memory_current_allocated_mb": 5.7451171875
+        }
+      ]
+    }
+  }
+}
